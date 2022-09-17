@@ -106,7 +106,7 @@ if [ "$PLATFORM" = "android" ]; then
   # Launch our packager directly as RN launchPackager doesn't work correctly with monorepos
   # E.g. Variant is devRelease or devDebug in the gradle product flavors
   startPackager
-  yarn react-native run-android --variant "${ENV_NAME}${BUILD_TYPE}" --appId "$APP_BUNDLE_ID" --no-packager
+  yarn react-native run-android --appId "$APP_BUNDLE_ID" --no-packager
 
 elif [ "$PLATFORM" = "ios" ]; then
 
