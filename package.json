@@ -5,6 +5,7 @@
   "scripts": {
     "dev:ios": "./scripts/run_app.sh -p ios",
     "dev:android": "./scripts/run_app.sh -p android",
+    "pre-deploy": "./scripts/pre-deploy.sh",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
