@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {waitUntilSagasFinishLoading} from 'src/redux/saga';
 import {persistor, store} from '../redux/store';
-import {variable} from 'src/redux/store';
 interface Props {
   appStartedMillis: number;
 }
@@ -14,7 +13,6 @@ export class App extends React.Component<Props> {
 
   async componentDidMount(): Promise<void> {
     // @todo Catch when app is launched using deep link
-    console.log(variable);
   }
 
   componentWillUnmount(): void {
@@ -41,9 +39,7 @@ export class App extends React.Component<Props> {
     return (
       <Provider store={store}>
         <PersistGate persistor={persistor}>
-          <View>
-            <Text>APP ROOT</Text>
-          </View>
+          {/* @todo Add App Navigation Wrapper */}
         </PersistGate>
       </Provider>
     );
