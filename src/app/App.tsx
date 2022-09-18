@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, Text, View} from 'react-native';
+import {Dimensions} from 'react-native';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {waitUntilSagasFinishLoading} from 'src/redux/saga';
