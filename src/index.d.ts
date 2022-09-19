@@ -5,5 +5,6 @@ declare module '*.json' {
 declare module '*.png';
 declare module '*.jpg';
 
+declare module 'react-native-restart-android';
 declare module 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 declare module 'redux-persist-fs-storage';
