@@ -53,12 +53,8 @@ export const _persistConfig = persistConfig;
 declare var window: any;
 
 export const setupStore = (initialState = {}, config = persistConfig) => {
-  console.debug(TAG, '@setupStore');
   const sagaMiddleware = createSagaMiddleware();
   const middlewares: Middleware[] = [sagaMiddleware];
-
-  console.debug(TAG, '@setupStore', JSON.stringify(sagaMiddleware));
-  console.debug(TAG, '@setupStore', JSON.stringify(middlewares));
 
   const persistedReducer = persistReducer(config, rootReducer);
 
