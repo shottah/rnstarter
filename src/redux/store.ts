@@ -79,5 +79,4 @@ export const setupStore = (initialState = {}, config = persistConfig) => {
 
 const {store, persistor} = setupStore();
 setupListeners(store.dispatch);
-export const variable = 1;
 export {store, persistor};

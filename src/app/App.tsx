@@ -1,10 +1,11 @@
 import React from 'react';
-import {Dimensions, Text, View} from 'react-native';
+import {Dimensions} from 'react-native';
 import {Provider} from 'react-redux';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {PersistGate} from 'redux-persist/integration/react';
 import {waitUntilSagasFinishLoading} from 'src/redux/saga';
 import {persistor, store} from '../redux/store';
-import {variable} from 'src/redux/store';
+import {NavigatorWrapper} from 'src/navigator/NavigatorWrapper';
 interface Props {
   appStartedMillis: number;
 }
@@ -14,7 +15,6 @@ export class App extends React.Component<Props> {
 
   async componentDidMount(): Promise<void> {
     // @todo Catch when app is launched using deep link
-    console.log(variable);
   }
 
   componentWillUnmount(): void {
@@ -39,13 +39,14 @@ export class App extends React.Component<Props> {
 
   render() {
     return (
-      <Provider store={store}>
-        <PersistGate persistor={persistor}>
-          <View>
-            <Text>APP ROOT</Text>
-          </View>
-        </PersistGate>
-      </Provider>
+      <SafeAreaProvider>
+        <Provider store={store}>
+          <PersistGate persistor={persistor}>
+            {/* @todo Add App Navigation Wrapper */}
+            <NavigatorWrapper />
+          </PersistGate>
+        </Provider>
+      </SafeAreaProvider>
     );
   }
 }
