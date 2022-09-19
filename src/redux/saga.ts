@@ -29,6 +29,7 @@ export function* rootSaga() {
     // @todo Hook up submodule sagas
     yield spawn(loggerSaga);
   } catch (error: any) {
+    console.error('redux/saga', JSON.stringify(error));
   } finally {
     sagasFinishedLoading = true;
   }
